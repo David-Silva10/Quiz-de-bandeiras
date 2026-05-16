@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Dancing+Script&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:  center;
+
+    background-color: black;
+}
+h1 {
+    margin: 1.5rem;
+    margin-top: 0rem;
+    padding: 1rem;
+    font-size: 3rem;
+    color: aliceblue;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    background-color: black;
+    margin-bottom: 3rem;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    min-height: 8rem;
+    border: 5px solid #ffffff;
+    box-shadow: 0 0 2px 2px;
+    border-radius: 10px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    gap: 10px;
+    font-size: 2rem;
+}
+.questoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    padding-top: 1rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+.answers-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 20px;
+    padding-bottom: 10px;
+    width: 100%;
+
+}
+button, .botao {
+    padding: 0.5rem;
+    width: auto;
+    min-width: 17rem;
+    height: auto;
+    min-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: blue;
+    color: azure;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid white;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+.botao:not(:disabled):hover {
+    color: black;
+    background-color: #00BFFF;
+    border: 2px solid black;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 1)
+}
+.botao:disabled {
+    cursor: not-allowed;
+}
+button:not(:disabled):active {
+    transform: scale(0.95);
+}
+.hide {
+    display: none !important;
+}
+img {
+    margin-top: 1rem;
+    width: 35rem;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4));
+}
+.correct {
+    background-color: #005e40;
+}
+.incorrect {
+    background-color: #8B0000;
+}
+.proxima {
+    padding: 0.5rem;
+    width: auto;
+    min-width: 14rem;
+    height: auto;
+    min-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #42045b;
+    color: azure;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid white;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+.proxima:hover {
+    color: aliceblue;
+    background-color: #9106c8;
+    border: 2px solid black;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 1)
+}
+#bandeira {
+    width: 20rem;
+}
+.pontuacao {
+    padding: 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+.botaoRefazer {
+    padding: 0.5rem;
+    width: auto;
+    min-width: 17rem;
+    height: auto;
+    min-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: rgb(255, 102, 0);
+    color: azure;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid white;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+.botaoRefazer:hover {
+    color: aliceblue;
+    background-color: #ff004c;
+    border: 2px solid black;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 1)
+}
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #58017a;
+    padding: 1.5rem;
+}
+p {
+    color: aliceblue;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
