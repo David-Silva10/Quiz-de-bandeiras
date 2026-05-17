@@ -20,9 +20,11 @@ function startgame() {
     comecar.classList.add("hide")
     imgGlobo.classList.add("hide")
     perguntasRespostas.classList.remove("hide")
+    cormudada()
     displayNextQuestion()
 }
 function displayNextQuestion() {
+    proximapergunta.classList.add("hide")
     while (respostas.firstChild) {
         respostas.removeChild(respostas.firstChild)
     }
@@ -46,12 +48,10 @@ function selecionada(event) {
 
     if (respostaClicada.dataset.correct) {
         document.body.classList.add("correct")
-        cormudada()
         pontos++
 
     } else {
         document.body.classList.add("incorrect")
-        deuruim()
     }
     document.querySelectorAll(".botao").forEach(button => {
         if (button.dataset.correct) {
@@ -64,18 +64,20 @@ function selecionada(event) {
     proximapergunta.classList.remove("hide")
     currentquestionindex++
     if (currentquestionindex === 30) {
+        proximapergunta.classList.add("hide")
+        setTimeout(() => {
         document.body.removeAttribute("class")
         pontuacao.classList.remove("hide")
         refazer.classList.remove("hide")
         imgBandeira.classList.add("hide")
         perguntasRespostas.classList.add("hide")
-        proximapergunta.classList.add("hide")
         pontuacao.textContent = `Total de acertos: ${pontos}/30`
         refazer.textContent = "Refazer Quiz"
         pontuacao.classList.add("pontuacao")
         refazer.classList.add("botaoRefazer")
         container.appendChild(pontuacao)
         container.appendChild(refazer)
+        }, 1500)
     }
 }
 function reiniciar() {
@@ -92,24 +94,12 @@ function reiniciar() {
     comecar.disabled = false
 }
 function cormudada() {
+    h1.style.marginTop = "1rem"
     h1.style.backgroundColor = "black"
     h1.style.border = "5px solid white"
     h1.style.borderRadius = "10px"
     h1.style.boxShadow = "5px 5px 15px rgba(0, 0, 0, 0.9"
 }
-function deuruim() {
-    h1.style.backgroundColor = "black"
-    h1.style.border = "5px solid white"
-    h1.style.borderRadius = "10px"
-    h1.style.boxShadow = "5px 5px 15px rgba(0, 0, 0, 0.9"
-}
-
-
-
-
-
-
-
 
 const questions = [
     {
@@ -242,7 +232,7 @@ const questions = [
         {text: "Nigéria", correct: true}
         ]
     },
-    {   img: "/assents/Tanzania.jpg",
+    {   img: "assents/istockphoto-1422538914-612x612.jpg",
         answers: [
         {text: "Jamaica", correct: false},
         {text: "Maldivas", correct: false},
